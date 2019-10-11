@@ -10,9 +10,7 @@ const Home = () => (
     <h2>Home</h2>
     <p>
       This is the home page!
-      <div class="fb-share-button" data-href="https://roli-ui.herokuapp.com/detailprod/13" data-layout="button_count" data-size="small">
-          <a target="_blank" rel="noopener noreferrer" href={"https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froli-ui.herokuapp.com%2Fdetailprod%2F"+2 +"&amp;src=sdkpreparse"} class="fb-xfbml-parse-ignore">Share</a>
-      </div>
+      <div class="fb-share-button" data-href="http://139.162.9.11:5000/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F139.162.9.11%3A5000%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
     </p>
   </div>
 )
@@ -22,9 +20,7 @@ const About = () => (
     <h2>About</h2>
     <p>
       This is the about page!
-      <div class="fb-share-button" data-href="https://roli-ui.herokuapp.com/detailprod/13" data-layout="button_count" data-size="small">
-          <a target="_blank" rel="noopener noreferrer" href={"https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froli-ui.herokuapp.com%2Fdetailprod%2F"+2 +"&amp;src=sdkpreparse"} class="fb-xfbml-parse-ignore">Share</a>
-      </div>
+      <div class="fb-share-button" data-href="http://139.162.9.11:5000/about/1" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F139.162.9.11%3A5000%2Fabout%2F1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
     </p>
   </div>
 )
