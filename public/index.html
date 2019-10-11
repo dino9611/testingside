@@ -21,11 +21,25 @@
     -->
     <title>$OG_TITLE</title>
     <meta name="description" content="$OG_DESCRIPTION" />
+    <meta property="og:type" content="website" />
     <meta property="og:title"       content="$OG_TITLE" />
     <meta property="og:description" content="$OG_DESCRIPTION" />
-    
+    <meta property="og:image" content="$OG_IMAGE"/>
   </head>
   <body>
+      <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId            : '813591125726432',
+              autoLogAppEvents : true,
+              xfbml            : true,
+              version          : 'v4.0'
+            });
+          };
+        </script>
+        <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+        <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=813591125726432&autoLogAppEvents=1"></script>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>

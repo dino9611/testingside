@@ -6,7 +6,8 @@ const fs = require('fs')
 
 app.get('/', function(request, response) {
   console.log('Home page visited!');
-  const filePath = path.resolve(__dirname, './build', 'index.html');
+  const filePath = path.resolve('./build', 'index.html');
+  console.log(filePath)
   fs.readFile(filePath, 'utf8', function (err,data) {
     if (err) {
       return console.log(err);
@@ -18,16 +19,18 @@ app.get('/', function(request, response) {
   });
 });
 
-app.get('/about', function(request, response) {
+app.get('/about/:id', function(request, response) {
   console.log('About page visited!');
+  console.log(request.params.id)
   const filePath = path.resolve(__dirname, './build', 'index.html')
   fs.readFile(filePath, 'utf8', function (err,data) {
     if (err) {
       return console.log(err);
     }
+    // console.log(data)
     data = data.replace(/\$OG_TITLE/g, 'About Page');
     data = data.replace(/\$OG_DESCRIPTION/g, "About page description");
-    result = data.replace(/\$OG_IMAGE/g, 'https://i.imgur.com/V7irMl8.png');
+    result = data.replace(/\$OG_IMAGE/g, 'https://www.outbrain.com/techblog/wp-content/uploads/2017/05/road-sign-361513_960_720.jpg');
     response.send(result);
   });
 });
@@ -50,7 +53,16 @@ app.use(express.static(path.resolve(__dirname, './build')));
 
 app.get('*', function(request, response) {
   const filePath = path.resolve(__dirname, './build', 'index.html');
-  response.sendFile(filePath);
+  fs.readFile(filePath, 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    data = data.replace(/\$OG_TITLE/g, 'Contact Page');
+    data = data.replace(/\$OG_DESCRIPTION/g, "Contact page description");
+    result = data.replace(/\$OG_IMAGE/g, 'https://i.imgur.com/V7irMl8.png');
+    response.send(result);
+  });
+  // response.sendFile(filePath);
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
