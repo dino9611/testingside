@@ -48,6 +48,19 @@ app.get('/contact', function(request, response) {
     response.send(result);
   });
 });
+app.get('/test/:id', function(request, response) {
+  console.log('test page visited!');
+  const filePath = path.resolve(__dirname, './build', 'index.html')
+  fs.readFile(filePath, 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    data = data.replace(/\$OG_TITLE/g, 'test Page');
+    data = data.replace(/\$OG_DESCRIPTION/g, "Contact page description");
+    result = data.replace(/\$OG_IMAGE/g, 'https://i.imgur.com/V7irMl8.png');
+    response.send(result);
+  });
+});
 
 app.use(express.static(path.resolve(__dirname, './build')));
 
